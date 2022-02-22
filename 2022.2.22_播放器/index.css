@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.player {
+    width: 240px;
+    height: 240px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, .1);
+    border-bottom: 4px solid rgba(211, 211, 211, 0.6);
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(212, 212, 212);
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.player::after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    background-color: rgb(212, 212, 212);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 10px 5px 0 0 rgb(212, 212, 212),
+    0 10px 0 0 rgb(212, 212, 212),
+    -10px 5px 0 0 rgb(212, 212, 212),
+    10px -5px 0 0 rgb(212, 212, 212),
+    -10px -5px 0 0 rgb(212, 212, 212),
+    0 -10px 0 0 rgb(212, 212, 212);
+}
+
+.background {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: rgb(231, 231, 231);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.change {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.rotate {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, .1);
+    animation: r 2s linear infinite;
+}
+
+@keyframes r {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+.rotate span:nth-child(1) {
+    display: block;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    border-radius: 50%;
+    border: 2px solid salmon;
+    color: salmon;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.rotate span:nth-child(2) {
+    display: block;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    border-radius: 50%;
+    border: 2px solid salmon;
+    background-color: salmon;
+    color: #fff;
+    font-size: 16px;
+}

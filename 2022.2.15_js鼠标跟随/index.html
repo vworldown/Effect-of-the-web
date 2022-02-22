@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="img"></div>
+
+    <script>
+        let img = document.querySelector(".img");
+        // 定义图片的旋转角度
+        let deg = 0;
+        // 定义距网页左侧的距离
+        let imgx = 0;
+        // 定义距网页顶部的距离
+        let imgy = 0;
+        // 设置图片定位 left 的值
+        let imgl = 0;
+        // 设置图片定位 top 的值
+        let imgt = 0;
+        // 定义图片的翻转角度
+        let y = 0;
+        // 定义一个计数器
+        let index = 0;
+
+        window.addEventListener("mousemove", (e) => {
+            // 让鼠标的位置在图片的正中间
+            imgx = e.x - img.offsetLeft - img.clientWidth / 2;
+            imgy = e.y - img.offsetTop - img.clientHeight / 2;
+            // 公式 (x,y)与(0,0)两点 确定夹角角度
+            // deg = 360 * Math.atan(imgy / imgx) / (2 * Math.PI);
+            // 鼠标移动重置index
+            index = 0;
+            // 定义当前鼠标的位置
+            let x = e.clientX;
+            // 当鼠标的x轴值大于图片的时候 人物要对着鼠标就得要翻转
+            if (img.offsetLeft < x) {
+                y = -180;
+            }else {
+                y = 0;
+            }
+        })
+
+        setInterval(() => {
+            // 设置图片翻转
+            img.style.transform = "rotateY(" + y + "deg)";
+            index ++
+            // 在这里设置图片的位置和速度，并判断图片到达鼠标位置时停止移动
+            // 当鼠标不移动时，imgx imgy 都会越来越小 直到变为 0
+            // 变为 0 之后， deg 与 y 值不会再改变
+            // index 而会一直增加 一旦大于 自己设定的某个值之后，图片的位置也不会再改变
+            // 这里从 index = 0开始 到 index = n 进行了 n 次判断，而且 imgl 加了 n * imgx / n 
+            // 所以就是等价了 imgl = imgx，只是延缓了时间，形成了速度快慢
+            let n = 50;
+            if (index < n) {
+                imgl += imgx / n;
+                imgt += imgy / n;
+            }
+            img.style.left = imgl + "px";
+            img.style.top = imgt + "px";
+        }, 10)
+
+
+    </script>
+</body>
+</html>

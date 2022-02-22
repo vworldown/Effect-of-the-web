@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="shell">
+        <div class="shell-top">
+            <ul class="main">
+                <li>
+                    <img src="./img/1.png" alt="">
+                    <div class="box-one"></div>
+                    <div class="box-two"></div>
+                    <div class="box-three"></div>
+                </li>
+                <li>
+                    <img src="./img/2.png" alt="">
+                    <div class="box-one"></div>
+                    <div class="box-two"></div>
+                    <div class="box-three"></div>
+                </li>
+                <li>
+                    <img src="./img/3.png" alt="">
+                    <div class="box-one"></div>
+                    <div class="box-two"></div>
+                    <div class="box-three"></div>
+                </li>
+            </ul>
+        </div>
+        <ul class="shell-bottom">
+            <li class="list">
+                <img src="./img/1.png" alt="">
+            </li>
+            <li class="list">
+                <img src="./img/2.png" alt="">
+            </li>
+            <li class="list">
+                <img src="./img/3.png" alt="">
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        let body = document.querySelector("body");
+        let list = document.querySelectorAll(".list");
+        let main = document.querySelector(".main");
+        for (let i = 0; i < list.length; i++) {
+            list[i].addEventListener("click", () => {
+                main.style.left = (i * -100) + "%";
+                if (i === 0) {
+                    body.style.backgroundColor = "rgb(250, 220, 250)";
+                }else if (i === 1) {
+                    body.style.backgroundColor = "rgb(240,175,195)";
+                }else {
+                    body.style.backgroundColor = "rgb(180,200,150)";
+                }
+            });
+            
+        }
+    </script>
+</body>
+</html>
