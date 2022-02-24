@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #2ecc71;
+}
+
+.shell {
+    width: 550px;
+    height: 100px;
+    border: 2px solid #000;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+.shell::before {
+    content: '';
+    position: absolute;
+    top: -21px;
+    left: 0;
+    display: block;
+    width: 77%;
+    height: 3px;
+    background-color: #f4f1de;
+}
+
+.shell::after {
+    content: 'Contact me';
+    position: absolute;
+    top: -32px;
+    right: 0;
+    font-size: 20px;
+    color: #f4f1de;
+}
+
+.box {
+    width: 25%;
+    height: 100px;
+    text-align: center;
+}
+
+.box i {
+    display: block;
+    color: #3d405b;
+    font-size: 50px;
+    line-height: 100px;
+    transition: .2s;
+}
+
+.box i:hover{
+    color: #f4f1de;
+}
+
+.box i::after{
+    position: absolute;
+    left: 0;
+    bottom: 170px;
+    width: 100%;
+    content: attr(data-i);
+    display: block;
+    font-size: 30px;
+    color: #81b29a;
+    background-color: #f4f1de;
+    opacity: 0;
+    
+    transition: .3s .2s;
+}
+
+.box i:hover::after {
+    transform: translateY(30px);
+    opacity: 1;
+}
