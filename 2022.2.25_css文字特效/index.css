@@ -1,0 +1,67 @@
+:root {
+    font-size: 28px;
+    font-family: Helvetica;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+
+.container {
+    perspective: 3000px;
+}
+
+.container .box {
+    display: block;
+    height: 120px;
+    font-size: 120px;
+    overflow: hidden;
+    /* border: 1px solid #000; */
+    text-align: center;
+    
+}
+
+.box span {
+    display: block;
+    height: 100%;
+    font-weight: bold;
+    line-height: 120px;
+    transition: .5s ease-in-out;
+}
+
+.box:nth-child(odd) {
+    background-color: rgba(0, 255, 255, .4);
+}
+
+.box:nth-child(even) {
+    background-color: rgba(0, 255, 255, .8);
+}
+
+.container:hover .box span {
+    transform: translateY(-100%);
+}
+
+.box:nth-child(1) {
+    transform: rotateX(40deg);
+}
+
+.box:nth-child(2) {
+    transform: translateY(-26px) rotateX(-40deg);
+}
+
+.box:nth-child(3) {
+    transform: translateY(-52px) rotateX(40deg);
+}
+
+.box:nth-child(4) {
+    transform: translateY(-78px) rotateX(-40deg);
+}
