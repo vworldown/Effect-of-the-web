@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #eee;
+}
+
+.drop {
+    width: 150px;
+    height: 150px;
+    box-shadow: 10px 10px 10px inset rgba(0, 0, 0, .05),
+    15px 25px 10px rgba(255, 255, 255, 0.05),
+    15px 20px 20px rgba(0, 0, 0, .05),
+    -10px -10px 15px inset rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    position: relative;
+}
+
+.drop::before {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.drop::after {
+    content: "";
+    position: absolute;
+    top: 34px;
+    left: 32px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+}
