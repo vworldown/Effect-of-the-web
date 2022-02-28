@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.wrap {
+    width: 1000px;
+    height: 100vh;
+    background-color: #E3916E;
+
+    position: relative;
+}
+
+.wrap .line {
+    width: 8px;
+    height: 100%;
+    background-color: #ffc0a5;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.wrap>ul {
+    width: 500px;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.wrap>ul .simple {
+    width: 200px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.wrap>ul .simple .date{
+    width: 200px;
+    height: 50px;
+    background-color: #ffccb6;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.wrap>ul .simple .date p {
+    line-height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.simple>ul {
+    position: relative;
+}
+
+.simple>ul .detail {
+    width: 250px;
+    border-radius: 10px;
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.detail>div p {
+    color: #fff;
+    font-size: 20px;
+}
+.content>div p {
+    font-size: 18px;
+    color: #fff;
+}
+
+.a {
+    width: 100px;
+    height: 80px;
+    background-color: #ffccb6;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    position: relative;
+}
+
+.simple>ul li:nth-child(odd) .a {
+    float: left;
+}
+
+.simple>ul li:nth-child(odd) .a::after {
+    content: "";
+    border-width: 15px;
+    border-color: transparent transparent transparent #ffccb6;
+    border-style: solid;
+
+    position: absolute;
+    top: 35px;
+    right: -29px;
+}
+
+.simple>ul li:nth-child(even) .a {
+    float: right;
+}
+
+.simple>ul li:nth-child(even) .a::after {
+    content: "";
+    border-width: 15px;
+    border-color:  transparent #ffccb6 transparent transparent ;
+    border-style: solid;
+
+    position: absolute;
+    top: 35px;
+    left: -29px;
+}
+
+
