@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.levels {
+    width: 30%;
+    height: 90vh;
+    position: absolute;
+    top: 0;
+    right: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.level {
+    width: 90%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    transform: rotateX(45deg) rotateY(-15deg) rotate(45deg);
+    opacity: 0.7;
+    transition: all .5s ease-in-out;
+    position: relative;
+}
+
+.level:hover {
+    transform: rotateX(0) rotateY(0) rotate(0) translateX(-250px);
+    opacity: 1;
+}
+
+.levels .level:nth-child(1) {
+    background-color: rgba(64, 107, 226, .4);
+}
+.levels .level:nth-child(2) {
+    background-color: rgba(210, 255, 49, 0.4);
+}
+.levels .level:nth-child(3) {
+    background-color: rgba(59, 20, 77, 0.4);
+}
+
+.level:hover::after {
+    transform: translateX(1000%);
+    transition: all .8s ease-in-out;
+}
+
+.level::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 100%;
+    transform: translateX(-100%);
+    background-image: linear-gradient(60deg, rgba(255,255,255,.2), rgba(255, 255, 255, .3));
+}
+
+
+.level .title {
+    width: 50%;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+}
+.level .player-avatar {
+    display: block;
+    width: 50%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-avatar img {
+    width: 80%;
+    height: 80%;
+}
+
+
