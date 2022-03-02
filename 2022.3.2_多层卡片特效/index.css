@@ -17,15 +17,18 @@
     padding: 0;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
 .levels {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -140px;
-    margin-top: -90px;
     transform-style: preserve-3d;
     user-select: none;
 }
+
 .levels .level {
     width: 280px;
     height: 140px;
@@ -39,6 +42,7 @@
 }
 .levels .level.one {
     background: linear-gradient(135deg, var(--one1), var(--one2));
+    /* 让卡片有厚度感 */
     box-shadow: 20px 20px 60px var(--levelShadow), 1px 1px 0px 1px var(--one2);
     z-index: 4;
 }
@@ -79,6 +83,8 @@
     transform: translateX(100%);
     transition: all 1.2s ease-in-out;
 }
+
+/* 当 hover 卡片时 有扫光效果 */
 .levels .level::after {
     content: '';
     position: absolute;
