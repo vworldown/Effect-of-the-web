@@ -28,9 +28,10 @@ a {
         rgba(0, 100, 200, 1)
     );
     background-size: 100% 3px, 0 3px;
+    /* 第一个值是水平位置，第二个值是垂直。左上角是0％0％。右下角是100％100％。 */
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
-    transition: background-size 400ms;
+    transition: background-size 1.5s;
 }
 
 a:hover {
