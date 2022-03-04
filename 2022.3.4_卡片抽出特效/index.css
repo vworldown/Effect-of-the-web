@@ -16,6 +16,7 @@ a {
     display: flex;
     padding: 200px 0 0 100px;
     overflow-x: scroll;
+    scroll-snap-type: x mandatory;
 }
 
 /* 
@@ -54,7 +55,6 @@ a {
     margin: 0;
     scroll-snap-align: start;
     clear: both;
-    position: relative;
 }
 
 /* hover改变后面兄弟元素的样式 */
