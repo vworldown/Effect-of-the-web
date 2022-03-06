@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #dcdcdc;
+        }
+
+        .paper {
+            width: 500px;
+            height: 400px;
+            background-color: #fff;
+            position: relative;
+        }
+
+        .paper::before {
+            content: "";
+            display: block;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            background-color: transparent;
+            border-width: 50px;
+            border-style: solid;
+            border-color: transparent #949494 #949494 transparent;
+            position: absolute;
+        }
+
+        .paper::after {
+            content: "";
+            display: block;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            background-color: transparent;
+            border-width: 50px;
+            border-style: solid;
+            border-color:  #dcdcdc transparent transparent #dcdcdc;
+            position: absolute;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="paper"></div>
+</body>
+</html>
