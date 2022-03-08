@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-family: consolas, monospace;
+            font-size: 15pt;
+            line-height: 1.5;
+        }
+
+        body {
+            margin: 2rem 5rem;
+            background: #000;
+            color: #f7f7f7;
+        }
+        /* 文本被选中后的高亮效果 */
+        ::selection {
+            background-color: #f06;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        In facilisis risus non vehicula commodo. Donec ac pretium sapien, ut lacinia quam.
+    </p>
+    <p>
+        Integer quis finibus magna, id dictum risus. 
+        Sed in diam non odio bibendum consequat ut ac velit.
+        Phasellus fringilla aliquam justo,vel feugiat massa vehicula ut. 
+        Cras ut consequat mi, ut vestibulum ipsum. Nunc enim felis, auctor at diam in, pulvinar gravida augue. Phasellus ultrices iaculis rutrum.
+    </p>
+    <script>
+        // 第一个参数表示 遍历的根节点；第二个参数表示 显示所有文字节点
+        const treeWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        const allTextNodes = [];
+        let currentNode = treeWalker.nextNode();
+        while (currentNode) {
+            // There may also be hidden text nodes in the page
+            // like text inside a <script> tag. So ignore those.
+            if (getComputedStyle(currentNode.parentNode).display !== 'none') {
+                allTextNodes.push(currentNode);
+            }
+            currentNode = treeWalker.nextNode();
+        }
+
+        // Then, loop through them, every time splitting them into
+        // individual words, and creating a list of words per node.
+        const allWords = [];
+        for (const textNode of allTextNodes) {
+            for (const word of textNode.textContent.matchAll(/[a-zA-Z]+/g)) {
+                allWords.push({
+                    word: word[0],
+                    parentNode: textNode,
+                    offset: word.index
+                });
+                
+                // console.log(word);
+                // console.log('------');
+                // textNode.textContent p 标签里面的内容（两个p标签 所以有两段内容，所以就有两个parentNode）
+                // textNode.textContent.matchAll(/[a-zA-Z]+/g) 匹配到所有单词
+                // 所以浏览器的搜索功能 也能通过 matchAll + Range 实现，但是我不会正则，所以就没拓展了
+            }
+        }
+
+        // Finally, loop through the words and highlight them one by
+        // one by creating a Range and Selection object.
+        // 通过Range对象，可以获取用户选中的区域，或者指定选中区域，得到Range的起点和终点、修改或者复制里边的文本，甚至是html。
+        let index = 0;
+        const range = new Range();
+        setInterval(() => {
+            if (index >= allWords.length) {
+                index = 0;
+            }
+            const {word, parentNode, offset} = allWords[index];
+            
+            // 选中 start ~ end 区间的文本
+            range.setStart(parentNode, offset);
+            range.setEnd(parentNode, offset + word.length);
+            // 移除选中
+            document.getSelection().removeAllRanges();
+            // 下一个单词设置高亮
+            document.getSelection().addRange(range);
+            
+            index++;
+        }, 100);
+    </script>
+</body>
+</html>
