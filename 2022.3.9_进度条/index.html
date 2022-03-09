@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="circle">
+        <div class="left">
+            <div class="left-circle">
+
+            </div>
+        </div>
+        <div class="right">
+            <div class="right-circle">
+                
+            </div>
+        </div>
+        <div class="inner">
+            0.0%
+        </div>
+    </div>
+    <script>
+        let innerDom = document.querySelector('.inner');
+        let left = document.querySelector('.left-circle');
+        let right = document.querySelector('.right-circle');
+        let timer = null;
+        let lodaer = 0;
+        let total = 1500;
+        timer = setInterval(() => {
+            let num = Number((lodaer / total) * 100).toFixed(1) + '%';
+            let deg = Number((lodaer / total) * 360).toFixed(2);
+            if(lodaer > total) {
+                clearInterval(timer);
+            }else {
+                lodaer ++;
+                innerDom.textContent = num;
+                if(deg > 180) {
+                    left.style.transform = `rotate(${deg}deg)`;
+                }else {
+                    right.style.transform = `rotate(${deg - 180}deg)`;
+                }
+            }
+        }, 10);
+    </script>
+</body>
+</html>
