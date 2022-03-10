@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="show">
+
+        </div>
+        <div class="load" onclick="load()">
+            <p>加载</p>
+        </div>
+    </div>
+    <script>
+        let status = 0;
+        let data = [
+            {
+                content: '111111',
+            },
+            {
+                content: '222222',
+            },
+        ];
+        let data2 = [
+            {
+                content: '111111',
+            },
+            {
+                content: '222222',
+            },
+            {
+                content: '111111',
+            },
+            {
+                content: '222222',
+            },
+        ];
+        let show = document.querySelector('.container .show');
+        let t = document.querySelector('.load p');
+        // window.onscroll = () => {
+        //      // 变量 scrollHeight 是滚动条的总高度
+        //     let scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+            
+        //     // 变量 windowHeight 是可视区的高度
+        //     let windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+
+        //     // 变量scrollTop为当前页面的滚动条纵坐标位置
+        //     let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        //     // 滚动条到底部得距离 = 滚动条的总高度 - 可视区的高度 - 当前页面的滚动条纵坐标位置
+        //     let scrollBottom = scrollHeight - windowHeight - scrollTop;
+        //     console.log(scrollBottom);
+        // };
+        // 找不到没有滚动条还能监听鼠标滚动的事件
+
+        // 所以只能用点击的方法
+        data.forEach((el) => {
+            let node = document.createElement("div");
+            let textNode = document.createTextNode(el.content);
+            node.className = 'list';
+            node.appendChild(textNode);
+            show.appendChild(node);
+        });
+
+        const load = () => {
+            // data 旧数据，data2 相当于新数据
+            if(data.length !== data2.length) {
+                status = 0;
+            }else {
+                status = 1;
+            }
+            if(status === 0) {
+                for(let i = data.length; i < data2.length; i ++) {
+                    let node = document.createElement("div");
+                    let textNode = document.createTextNode(data2[i].content);
+                    node.className = 'list';
+                    node.appendChild(textNode);
+                    show.appendChild(node);
+                }
+            }
+        };
+
+    </script>
+</body>
+</html>
