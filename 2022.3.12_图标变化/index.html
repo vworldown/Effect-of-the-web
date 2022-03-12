@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            width:100%; 
+            height:auto; 
+            position:absolute; 
+            bottom:0; 
+            text-align:center;
+        }
+        #box img {
+            width:64px; 
+            height:64px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="img/报表.png"/>
+        <img src="img/话题.png"/>
+        <img src="img/银行卡.png"/>
+        <img src="img/证件.png"/>
+    </div>
+
+    <script>
+        var oDiv = document.getElementById('box');
+        var aImg = oDiv.getElementsByTagName('img');
+        var arr=[];
+        for(var i=0; i<aImg.length; i++){
+            arr.push([(aImg[i].offsetLeft+1/2*aImg[i].offsetWidth),(1/2*aImg[i].offsetHeight+getTop(aImg[i]))]);
+        }//将每个图片的中心点的位置存放在数组中
+        document.onmousemove = function(ev){
+            var ev = ev||event;
+            var L = ev.clientX;
+            var T = ev.clientY;
+            for(var i=0; i<aImg.length; i++){
+                var a  = Math.pow((arr[i][0] - L),2);//鼠标的位置与对应图片的中心点之间水平距离的平方
+                var b = Math.pow((arr[i][1] -T),2 );//鼠标位置与对应图片中心点之间垂直距离的平方
+                var c = Math.sqrt(b+a);//鼠标到图片中心点的距离
+            
+                var scare = 1 - c/300;//计算出缩放比例
+                if(scare<0.5){
+                    scare = 0.5;
+                }
+                aImg[i].style.width = 128*scare +'px';
+                aImg[i].style.height = 128*scare +'px';
+            }
+    
+        }
+        function getTop(obj){//获取元素到body顶部的距离
+            var iTop = 0;
+            while(obj){
+                iTop += obj.offsetTop;
+                obj = obj.offsetParent;
+            }
+            return iTop;
+        }
+    </script>
+</body>
+</html>
