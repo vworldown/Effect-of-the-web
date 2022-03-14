@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(241, 221, 138);
+}
+
+.shell {
+    width: 70%;
+    padding: 50px;
+    overflow: hidden;
+    h2 {
+        color: rgb(123, 150, 241);
+        font-size: 90px;
+        margin-left: 400px;
+        font: 500 80px "Helvetica";
+    }
+    p {
+        color: rgb(98, 98, 98);
+        font-size: 22px;
+        text-align: justify;
+    }
+    .left {
+        height: 500px;
+        float: left;
+        shape-margin: 20px;
+        shape-outside: url(./img/img.png);
+    }
+    .right {
+        height: 500px;
+        float: right;
+        shape-outside: url(./img/img2.png);
+        margin: 240px -80px 0 0;
+    }
+
+}
