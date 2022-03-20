@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border-radius工具</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <div class="generator">
+      <div class="title">
+        <p>8 POINT FULL CONTROL</p>
+      </div>
+      <div class="process">
+        <div class="res"></div>
+        <span class="generator__handle first first_top"></span>
+        <span class="generator__handle first first_left"></span>
+        <span class="generator__handle second second_top"></span>
+        <span class="generator__handle second second_right"></span>
+        <span class="generator__handle third third_right"></span>
+        <span class="generator__handle third third_bottom"></span>
+        <span class="generator__handle fourth fourth_bottom"></span>
+        <span class="generator__handle fourth fourth_left"></span>
+      </div>
+      <div class="bottom">
+        <div class="copy">
+          <p>50% 50% 50% 50% / 50% 50% 50% 50% </p>
+        </div>
+        <a onclick="oCopy()">copy</a>
+      </div>
+      <div class="range">
+        <span>
+          <p>first_top:</p>
+          <input type="range" name="first_top" id="first_top_val">
+        </span>
+        <span>
+          <p>first_left</p>
+          <input type="range" name="first_left" id="first_left_val">
+        </span>
+        <span>
+          <p>second_top</p>
+          <input type="range" name="second_top" id="second_top_val">
+        </span>
+        <span>
+          <p>second_right</p>
+          <input type="range" name="second_right" id="second_right_val">
+        </span>
+        <span>
+          <p>third_right</p>
+          <input type="range" name="third_right" id="third_right_val">
+        </span>
+        <span>
+          <p>third_bottom</p>
+          <input type="range" name="third_bottom" id="third_bottom_val">
+        </span>
+        <span>
+          <p>fourth_bottom</p>
+          <input type="range" name="fourth_bottom" id="fourth_bottom_val">
+        </span>
+        <span>
+          <p>fourth_left</p>
+          <input type="range" name="fourth_left" id="fourth_left_val">
+        </span>
+        
+      </div>
+    </div>
+  </div>
+  <script>
+    let res = document.querySelector(".res");
+    let first_top = document.querySelector(".first_top");
+    let first_left = document.querySelector(".first_left");
+    let second_top = document.querySelector(".second_top");
+    let second_right = document.querySelector(".second_right");
+    let third_right = document.querySelector(".third_right");
+    let third_bottom = document.querySelector(".third_bottom");
+    let fourth_bottom = document.querySelector(".fourth_bottom");
+    let fourth_left = document.querySelector(".fourth_left");
+
+    let first_top_val = document.querySelector("#first_top_val");
+    let first_left_val = document.querySelector("#first_left_val");
+    let second_top_val = document.querySelector("#second_top_val");
+    let second_right_val = document.querySelector("#second_right_val");
+    let third_right_val = document.querySelector("#third_right_val");
+    let third_bottom_val = document.querySelector("#third_bottom_val");
+    let fourth_bottom_val = document.querySelector("#fourth_bottom_val");
+    let fourth_left_val = document.querySelector("#fourth_left_val");
+
+    let copy = document.querySelector(".copy p");
+    const updateRadius = () => {
+      let s = `${first_top_val.value}% ${second_top_val.value}% ${third_bottom_val.value}% ${fourth_bottom_val.value}% / ${first_left_val.value}% ${second_right_val.value}% ${third_right_val.value}% ${fourth_left_val.value}%`
+      copy.innerText = s;
+    }
+
+    first_top_val.addEventListener("input", (e) => {
+      // console.log(e.srcElement.value);
+      first_top.style.left = e.srcElement.value + "%";
+      res.style.borderTopLeftRadius = `${first_top_val.value}% ${first_left_val.value}%`;
+      updateRadius();
+    });
+
+    first_left_val.addEventListener("input", (e) => {
+      // console.log(e.srcElement.value);
+      first_left.style.top = e.srcElement.value + "%";
+      res.style.borderTopLeftRadius = `${first_top_val.value}% ${first_left_val.value}%`;
+      updateRadius();
+    });
+
+    second_top_val.addEventListener("input", (e) => {
+      // console.log(e.srcElement.value);
+      second_top.style.right = e.srcElement.value + "%";
+      res.style.borderTopRightRadius = `${second_top_val.value}% ${second_right_val.value}%`;
+      updateRadius();
+    });
+
+    second_right_val.addEventListener("input", (e) => {
+      // console.log(e.srcElement.value);
+      second_right.style.top = e.srcElement.value + "%";
+      res.style.borderTopRightRadius = `${second_top_val.value}% ${second_right_val.value}%`;
+      updateRadius();
+    });
+
+    third_right_val.addEventListener("input", (e) => {
+      // console.log(e.srcElement.value);
+      third_right.style.bottom = e.srcElement.value + "%";
+      res.style.borderBottomRightRadius = `${third_bottom_val.value}% ${third_right_val.value}%`;
+      updateRadius();
+    });
+
+    third_bottom_val.addEventListener("input", (e) => {
+      // console.log(e.srcElement.value);
+      third_bottom.style.right = e.srcElement.value + "%";
+      res.style.borderBottomRightRadius = `${third_bottom_val.value}% ${third_right_val.value}%`;
+      updateRadius();
+    });
+
+    fourth_bottom_val.addEventListener("input", (e) => {
+      fourth_bottom.style.left = e.srcElement.value + "%";
+      res.style.borderBottomLeftRadius = `${fourth_bottom_val.value}% ${fourth_left_val.value}%`;
+      updateRadius();
+    });
+
+    fourth_left_val.addEventListener("input", (e) => {
+      fourth_left.style.bottom = e.srcElement.value + "%";
+      res.style.borderBottomLeftRadius = `${fourth_bottom_val.value}% ${fourth_left_val.value}%`;
+      updateRadius();
+    });
+
+    function oCopy(){
+      // console.log(copy.innerText);
+      var oInput = document.createElement('input');
+      oInput.value = copy.innerText;
+      document.body.appendChild(oInput);
+      oInput.select(); // 选择对象
+      document.execCommand("Copy"); // 执行浏览器复制命令
+      oInput.className = 'oInput';
+      oInput.style.display='none';
+      alert('复制成功');
+    }
+  </script>
+</body>
+</html>
