@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: Helvetica;
+      background-color: #002;
+    }
+    .contianer {
+      width: 180px;
+      height: 180px;
+      position: relative;
+    }
+
+    .contianer img {
+      width: 70px;
+      height: 100px;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.2s linear;
+    }
+    .contianer:hover img {
+      animation: shake 0.1s linear infinite;
+    }
+
+    .circlar path{ 
+      fill: none; 
+    }
+    .circlar{
+      width: 180px;
+      height: 180px;
+      position: absolute;
+      animation: rotate 8s linear infinite;
+    }
+    .circlar svg{
+      display: block;
+      overflow: visible;
+    }
+
+    .circlar text {
+      letter-spacing: 12px;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes shake {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      50% {
+        transform: translate(-50%, -50%) rotate(10deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="contianer">
+    <img 
+      src="https://9elements.com/assets/agency/Jobhand-d5e0dad33fb89125a7e5aa45f6760d029beb5712b68985d4ad8a72fe525934ed.svg" 
+      alt="Shaking Rocking Fingers"
+    />
+    <div class="circlar">
+      <svg viewBox="0 0 100 100">
+           <path d="M 0,50 a 50,50 0 1, 1 0, 1 z" id="circle"></path>
+           <text>
+               <textPath xlink:href="#circle" fill="#fff">
+                  WE ARE HIRING!
+               </textPath>
+           </text>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>
