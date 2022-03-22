@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="head">
+    <div class="container">
+      <a href="#">MENU</a>
+      <a href="#">b</a>
+    </div>
+  </div>
+  <div class="a"></div>
+  <script>
+    let c = document.querySelector(".container");
+    
+    // 使用节流
+    const saveData = (fn, wait) => {
+      let timer = null;
+      return () => {
+          if (!timer) {
+              timer = setTimeout(() => {
+                  fn();
+                  timer = null;
+              }, wait);
+          }
+      };
+    };
+
+    let flag = 0;
+    window.addEventListener("scroll", saveData(()=> {
+      /*
+        scrollTop 滚动滑块距离顶部的距离
+        scrollHeight 滚动条的长度
+      */
+      if(document.documentElement.scrollTop < flag && window.pageYOffset > 200) {
+        c.classList.add("isScroll")
+      }else {
+        c.classList.remove("isScroll");
+      }
+      flag = document.documentElement.scrollTop;
+    }, 300));
+
+  </script>
+</body>
+</html>

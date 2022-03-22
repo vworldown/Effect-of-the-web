@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+body {
+  background-color: #002;
+}
+
+.head {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.81, 0.18, 0.33, 1.73);
+}
+
+.container a {
+  display: block;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 设置旋转过去的盒子隐藏 */
+  backface-visibility: hidden;
+}
+
+.container a:nth-child(2) {
+  transform: rotateX(-180deg);
+}
+
+.isScroll {
+  transform: rotateX(180deg);
+}
+
+.a {
+  width: 100%;
+  height: 3000px;
+}
