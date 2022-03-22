@@ -1,0 +1,58 @@
+@import url('https://fonts.font.im/css?family=Indie+Flower|Libre+Barcode+39+Extended+Text|Pacifico');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 32px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+p {
+  font-family: 'Indie Flower', cursive;
+  color: #2ecc71;
+}
+
+span {
+  font-family: 'Libre Barcode 39 Extended Text', cursive;
+  font-size: 50px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.bg {
+  width: 800px;
+  height: 400px;
+  border-radius: 15px;
+  margin: 20px auto;
+  background-color: #46fc92;
+  position: relative;
+}
+
+.bottom {
+  width: 750px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.name {
+  width: 120px;
+  height: 40px;
+}
+
+.zhe {
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  top: 63px;
+  left: 30px;
+  background-color: inherit;
+  /* border: 1px solid #000; */
+}
