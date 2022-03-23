@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <div class="head">
+      <p>设置</p>
+    </div>
+    <div class="search">
+      <div class="title">
+        <p>搜索</p>
+      </div>
+      <input type="text">
+    </div>
+    <div class="item"></div>
+  </div>
+  <script>
+    let container = document.querySelector(".container");
+    let search = document.querySelector(".search input");
+    let s = document.querySelector(".search");
+    let head = document.querySelector(".head")
+    container.addEventListener("scroll", () => {
+      let f = container.scrollTop;
+      if(f < 130) {
+        head.style.opacity = 0;
+      }else {
+        head.style.opacity = 1;
+      }
+      if(f > 50){
+        search.style.height = (search.offsetHeight - 3) + 'px';
+        s.style.height = (s.offsetHeight - 3) + 'px';
+      }else {
+        search.style.height = "40px";
+        s.style.height = "80px";
+      }
+      console.log(f);
+    })
+  </script>
+</body>
+</html>
