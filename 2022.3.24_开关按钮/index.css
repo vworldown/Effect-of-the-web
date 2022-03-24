@@ -1,0 +1,97 @@
+:root {
+  /* 按钮宽度 */
+  --button-width: 500px;
+  /* 按钮高度 */
+  --button-height: 295px;
+  /* 按钮里面圆形的直径 */
+  --toggle-diameter: 255px;
+  /* 按钮与里面圆形的间距 */
+  --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
+  /* 圆形阴影 */
+  --toggle-shadow-offset: 10px;
+  /* 里面圆形长按状态下的宽度 */
+  --toggle-wider: 333px;
+  /* 浅灰色 */
+  --color-grey: #e9e9ea;
+  /* 深灰色 */
+  --color-dark-grey: #39393d;
+  /* 绿色 */
+  --color-green: #30d158;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+span {
+  display: inline-block;
+  width: var(--button-width);
+  height: var(--button-height);
+  background-color: var(--color-grey);
+  border-radius: calc(var(--button-height) / 2);
+  position: relative;
+  transition: 0.3s all ease-in-out;
+}
+
+span::before {
+  content: "";
+  display: inline-block;
+  width: var(--toggle-diameter);
+  height: var(--toggle-diameter);
+  background-color: #fff;
+  border-radius: calc(var(--toggle-diameter) / 2);
+  position: absolute;
+  top: var(--button-toggle-offset);
+  transform: translateX(var(--button-toggle-offset));
+  box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+  transition: 0.3s all ease-in-out;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked + span {
+  background-color: var(--color-green);
+}
+
+input[type="checkbox"]:checked + span::before {
+  transform: translateX(
+    calc(var(--button-width) 
+    - var(--toggle-diameter) 
+    - var(--button-toggle-offset)
+    )
+  );
+  box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+}
+
+input[type="checkbox"]:active + span::before {
+  width: var(--toggle-wider);
+}
+
+input[type="checkbox"]:checked:active + span::before {
+  transform: translateX(
+    calc(
+      var(--button-width) 
+      - var(--toggle-wider) 
+      - var(--button-toggle-offset)
+    )
+  );
+}
+
+@media(prefers-color-scheme: dark) {
+  body {
+    background-color: #1c1c1e;
+  }
+  span {
+    background-color: var(--color-dark-grey);
+  }
+}
