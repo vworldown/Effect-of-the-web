@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <p>ZOU KUN YI</p>
+  </div>
+  <div class="control">
+    <div class="bounce">
+      <p>bounce</p>
+    </div>
+    <div class="flash">
+      <p>flash</p>
+    </div>
+    <div class="rubberBand">
+      <p>rubberBand</p>
+    </div>
+    <div class="shakeX">
+      <p>shakeX</p>
+    </div>
+    <div class="swing">
+      <p>swing</p>
+    </div>
+    <div class="tada">
+      <p>tada</p>
+    </div>
+    <div class="wobble">
+      <p>wobble</p>
+    </div>
+    <div class="jello">
+      <p>jello</p>
+    </div>
+    <div class="heartBeat">
+      <p>heartBeat</p>
+    </div>
+  </div>
+  <script>
+    let bounce = document.querySelector(".bounce");
+    let t = document.querySelector(".container");
+    bounce.addEventListener("click", () => {
+      t.style.animation = "1s cubic-bezier(.215,.61,.355,1) bounce";
+    })
+
+    let flash = document.querySelector(".flash");
+    flash.addEventListener("click", () => {
+      t.style.animation = "1s cubic-bezier(.215,.61,.355,1) flash";
+    })
+
+    let rubberBand = document.querySelector(".rubberBand");
+    rubberBand.addEventListener("click", () => {
+      t.style.animation = "1s cubic-bezier(.215,.61,.355,1) rubberBand";
+    })
+
+    let shakeX = document.querySelector(".shakeX");
+    shakeX.addEventListener("click", () => {
+      t.style.animation = "0.5s cubic-bezier(.215,.61,.355,1) shakeX";
+    })
+
+    let swing = document.querySelector(".swing");
+    swing.addEventListener("click", () => {
+      t.style.animation = "1s cubic-bezier(.215,.61,.355,1) swing";
+    })
+
+    let tada = document.querySelector(".tada");
+    tada.addEventListener("click", () => {
+      t.style.animation = "1s cubic-bezier(.215,.61,.355,1) tada";
+    })
+
+    let wobble = document.querySelector(".wobble");
+    wobble.addEventListener("click", () => {
+      t.style.animation = "0.5s cubic-bezier(.215,.61,.355,1) wobble";
+    })
+
+    let jello = document.querySelector(".jello");
+    jello.addEventListener("click", () => {
+      t.style.animation = "1.5s cubic-bezier(.215,.61,.355,1) jello";
+    })
+
+    let heartBeat = document.querySelector(".heartBeat");
+    heartBeat.addEventListener("click", () => {
+      t.style.animation = "1s ease-in-out heartBeat";
+    })
+  </script>
+</body>
+</html>
