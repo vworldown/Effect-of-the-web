@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <p>ZOU KUN YI</p>
+  </div>
+  <div class="control">
+    <div class="backInDown">
+      <p>backInDown</p>
+    </div>
+    <div class="backInLeft">
+      <p>backInLeft</p>
+    </div>
+    <div class="backInRight">
+      <p>backInRight</p>
+    </div>
+    <div class="backInUp">
+      <p>backInUp</p>
+    </div>
+  </div>
+  <script>
+    let backInDown = document.querySelector(".backInDown");
+    let t = document.querySelector(".container");
+    backInDown.addEventListener("click", () => {
+      t.style.animation = "1s ease-in-out backInDown";
+    })
+
+    let backInLeft = document.querySelector(".backInLeft");
+    backInLeft.addEventListener("click", () => {
+      t.style.animation = "1s ease-in-out backInLeft";
+    })
+
+    let backInRight = document.querySelector(".backInRight");
+    backInRight.addEventListener("click", () => {
+      t.style.animation = "1s ease-in-out backInRight";
+    })
+
+    let backInUp = document.querySelector(".backInUp");
+    backInUp.addEventListener("click", () => {
+      t.style.animation = "1s ease-in-out backInUp";
+    })
+  </script>
+
+</body>
+</html>

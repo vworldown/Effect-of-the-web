@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fbf2f1;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.control {
+  position: fixed;
+  right: 0;
+
+  width: 100px;
+  height: auto;
+  padding: 50px;
+  border: 1px solid #461fc1;
+}
+
+.control div {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.control p {
+  line-height: 30px;
+  color: #461fc1;
+  font-size: 20px;
+}
+
+.container p {
+  color: #461fc1;
+  font-size: 46px;
+  font-weight: bolder;
+  font-family: Helvetica, sans-serif;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes backInDown {
+  0% {
+    -webkit-transform:translateY(-1200px) scale(.7);
+    transform:translateY(-1200px) scale(.7);
+    opacity:.7
+  }
+  80% {
+    -webkit-transform:translateY(0) scale(.7);
+    transform:translateY(0) scale(.7);
+    opacity:.7
+  }
+  100% {
+    -webkit-transform:scale(1);
+    transform:scale(1);
+    opacity:1
+  }
+}
+
+@keyframes backInLeft {
+  0% {
+    -webkit-transform:translateX(-1200px) scale(.7);
+    transform:translateX(-1200px) scale(.7);
+    opacity:.7
+  }
+  80% {
+    -webkit-transform:translateX(0) scale(.7);
+    transform:translateX(0) scale(.7);
+    opacity:.7
+  }
+  100% {
+    -webkit-transform:scale(1);
+    transform:scale(1);
+    opacity:1
+  }
+}
+
+@keyframes backInRight {
+  0% {
+    -webkit-transform:translateX(1200px) scale(.7);
+    transform:translateX(1200px) scale(.7);
+    opacity:.7
+  }
+  80% {
+    -webkit-transform:translateX(0) scale(.7);
+    transform:translateX(0) scale(.7);
+    opacity:.7
+  }
+  100% {
+    -webkit-transform:scale(1);
+    transform:scale(1);
+    opacity:1
+  }
+}
+
+@keyframes backInUp {
+  0% {
+    -webkit-transform:translateY(1200px) scale(.7);
+    transform:translateY(1200px) scale(.7);
+    opacity:.7
+  }
+  80% {
+    -webkit-transform:translateY(0) scale(.7);
+    transform:translateY(0) scale(.7);
+    opacity:.7
+  }
+  100% {
+    -webkit-transform:scale(1);
+    transform:scale(1);
+    opacity:1
+  }
+}
