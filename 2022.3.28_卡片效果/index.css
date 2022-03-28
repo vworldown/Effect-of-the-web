@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.shell {
+  min-width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* 3d效果 */
+  transform-style: preserve-3d;
+  /* 视距 */
+  perspective: 900px;
+}
+
+.shell .box {
+  width: 200px;
+  height: 280px;
+  transition: 0.3s;
+  overflow: hidden;
+  margin: 30px;
+  transform: rotateY(0);
+  transition-delay: 0.1s;
+  border-radius: 5px;
+  border: 5px solid #fff;
+}
+
+.shell .box .images {
+  width: 200px;
+  height: 280px;
+}
+
+.images img {
+  width: 100%;
+}
+
+.shell:hover .box {
+  transform: rotateY(20deg);
+}
+
+.shell .box:hover {
+  transform: rotateY(0) scale(1.2);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.7);
+}
+
+.shell .box:hover ~ .box {
+  transform: rotateY(-20deg);
+}
