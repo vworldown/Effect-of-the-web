@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  position: relative;
+  font-size: 120px;
+  font-weight: bold;
+  overflow: hidden;
+  background-color: #fff;
+  color: #000;
+}
+
+p::before,
+p::after {
+  content: "";
+  top: -923px;
+  left: 50%;
+  width: 2000px;
+  height: 2000px;
+  position: absolute;
+  border-radius: 45% 48% 43% 47%;
+  background: rgba(3, 169, 244, .85);
+  animation: rotate 10s infinite linear;
+  /* z-index: 1; */
+  mix-blend-mode: lighten;
+}
+
+p::after {
+  border-radius: 43% 47% 44% 48%;
+  animation: rotate 10s infinite .5s linear;
+}
+
+@keyframes rotate {
+  0% {
+      transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
