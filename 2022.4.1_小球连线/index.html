@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="theCanvas"></canvas>
+  <script>
+    const theCanvas = document.getElementById("theCanvas");
+    ctx = theCanvas.getContext("2d");
+    // 两个小球产生连线的极限距离的平方
+    mix = 6000;
+    let current_point = {
+      x: null, //当前鼠标x
+      y: null, //当前鼠标y
+    };
+
+    // 将canvas铺满浏览器
+    let WIDTH = theCanvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+      HEIGHT = theCanvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
+      points = [];
+    theCanvas.style = "position: fixed; top: 0; left: 0;";
+
+    // 绘制函数
+    function draw() {
+      // 清屏
+      ctx.clearRect(0, 0, WIDTH, HEIGHT);
+      let i, pi, x_dist, y_dist;
+
+      points.forEach((p, index) => {
+        p.x += p.xa,		//按指定速度移动
+        p.y += p.ya,
+        p.xa *= p.x > WIDTH || p.x < 0 ? -1 : 1,
+        p.ya *= p.y > HEIGHT || p.y < 0 ? -1 : 1,
+        ctx.fillRect(p.x, p.y, 1, 1);
+
+        for(i = index + 1; i < all_points.length; i++) {
+          pi = all_points[i];
+          x_dist = p.x - pi.x;
+          y_dist = p.y - pi.y;
+          dist = x_dist * x_dist + y_dist * y_dist;
+          //根据两点距离得到一个参数w，控制线条粗细
+          w = (mix - dist) / mix;
+          //判断点之间的距离是否小于极限距离
+          if(dist < mix) {
+            ctx.beginPath();
+            ctx.lineWidth = w;
+            ctx.strokeStyle = `rgba(110,110,110,${w + 0.2})`;
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(pi.x, pi.y);
+            ctx.stroke();
+          }
+        };
+
+      });
+      requestAnimationFrame(draw);
+    }
+
+    //随机生成100个点
+    for(let i = 0; i < 200; i++ ) {
+      let	x = Math.random() * WIDTH,	//初始坐标
+        y = Math.random() * HEIGHT,
+        xa = 2 * Math.random() - 1,			//x速度
+        ya = 2 * Math.random() - 1;			//y速度
+      points[i] = {x, y, xa, ya};
+    }
+
+    //绑定事件，判断是否添加鼠标这个点
+			window.onmousemove = e => {
+				e = e || window.event;
+				current_point.x = e.clientX;
+				current_point.y = e.clientY;
+			};
+			window.onmouseout = () => {
+				current_point.x = null;
+				current_point.y = null;
+			};
+
+			//将鼠标的点添加至点集合中
+			all_points = [...points, current_point];
+
+    draw();
+  </script>
+</body>
+</html>
