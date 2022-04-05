@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <!-- <img src="./img/bg.png" alt=""> -->
+    <div class="p"></div>
+    <div class="p"></div>
+    <div class="p"></div>
+    <div class="p"></div>
+  </div>
+  <div class="mask">
+    <div>
+      <div class="close">
+        <p>关闭</p>
+      </div>
+      <div class="content">
+        <div class="item" style="display: none;">
+          <div class="name">
+            <p>TAEYANG</p>
+          </div>
+          <div class="des">
+            <p>太阳（TAEYANG、东永裴、동영배），1988年5月18日出生于韩国京畿道议政府市，韩国流行乐男歌手，男子演唱组合BIGBANG的成员。 2006年以演唱组合BIGBANG成员身份正式出道。2008年首次发行个人首张迷你专辑《Hot》，在韩国同时荣获了最佳音乐及最佳专辑奖。</p>
+          </div>
+        </div>
+        <div class="item" style="display: none;">
+          <div class="name">
+            <p>G-DRAGON</p>
+          </div>
+          <div class="des">
+            <p>G-DRAGON（权志龙、권지용），1988年8月18日出生于韩国首尔，韩国流行乐男歌手、词曲创作人、音乐制作人，男子演唱组合BIGBANG的队长。 2001年，因参与特别企划专辑《大韩民国Hip-Hop Flex》而出道。2006年，以组合BIGBANG成员身份正式出道。</p>
+          </div>
+        </div>
+        <div class="item" style="display: none;">
+          <div class="name">
+            <p>DAESUNG</p>
+          </div>
+          <div class="des">
+            <p>艺名大声(대성)，本名姜大声（Kang Dae Sung），1989年4月26日出生于韩国首尔，歌手、演员、主持人，男子组合BIGBANG成员之一，并担任队中主唱及领唱。毕业于庆熙大学。 2006年8月19日以演唱组合BigBang成员身份出道。</p>
+          </div>
+        </div>
+        <div class="item" style="display: none;">
+          <div class="name">
+            <p>T.O.P</p>
+          </div>
+          <div class="des">
+            <p>T.O.P(탑)，本名崔胜铉（Choi Seung Hyun），韩国男歌手、演员，男子演唱组合BIGBANG成员之一。 2006年签约韩国YG娱乐公司；同年8月19日以演唱组合BIGBANG正式出道。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let p = document.querySelectorAll(".container .p");
+    let items = document.querySelectorAll(".item");
+    let mask = document.querySelector(".mask");
+    let close = document.querySelector(".mask .close");
+    p.forEach((val, index) => {
+      val.addEventListener("click", () => {
+        mask.style.display = "block";
+        items.forEach((val2, index2) => {
+          if(index === index2) {
+            val2.style.display = "block";
+          }else {
+            val2.style.display = "none";
+          }
+        })
+      });
+    });
+
+    close.addEventListener("click", ()=> {
+      mask.style.display = "none";
+    });
+
+
+  </script>
+</body>
+</html>
