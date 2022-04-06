@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="top"></div>
+  <div class="down">
+    <div class="a"></div>
+  </div>
+  <script>
+    let down = document.querySelector(".down");
+    let a = document.querySelector(".a");
+    // 判断元素是否在视图窗口内
+    // 方法一
+    function isInViewPortOfOne (el) {
+      // viewPortHeight(视图窗口的高度) 兼容所有浏览器写法
+      const viewPortHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      // 当前元素相对于 offsetParent 节点顶部边界的偏移像素值
+      const offsetTop = el.offsetTop;
+      // 滚动滑块移动距离
+      const scrollTop = document.documentElement.scrollTop;
+      const top = offsetTop - scrollTop;
+      return top <= viewPortHeight;
+    }
+
+    window.addEventListener("scroll", () => {
+      // if(isInViewPortOfOne(down)) {
+      //   a.style.display = "block";
+      // }
+
+
+      // 方法二
+      const viewPortHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      const viewPortWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      // 拥有left, top, right, bottom, x, y, width, 和 height这几个以像素为单位的只读属性用于描述整个边框
+      // 除了width 和 height 以外的属性是相对于视图窗口的左上角来计算的
+      const clientRect = down.getBoundingClientRect();
+      if(clientRect.right <= viewPortWidth && clientRect.bottom <= viewPortHeight && clientRect.top >= 0 && clientRect.left >= 0) {
+        a.style.display = "block";
+      }
+    })
+  </script>
+</body>
+</html>
