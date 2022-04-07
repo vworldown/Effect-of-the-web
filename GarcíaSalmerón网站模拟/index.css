@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#marco {
+  color: #fff;
+  z-index: 99;
+  position: absolute;
+  mix-blend-mode: difference;
+  font-size: 2.5vh;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#marco a {
+  padding: 1vh 1vh 0.5vh 1vh;
+  color: #fff;
+  text-decoration: none;
+}
+
+#info {
+  text-transform: uppercase;
+  position: fixed;
+  left: 3vw;
+  top: 3vh;
+}
+
+#studio {
+  position: fixed;
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  left: 20vw;
+  top: 0;
+  text-transform: uppercase;
+  overflow: hidden;
+  margin: 2vh;
+}
+
+#studio a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#studio span {
+  font-family: 'Times New Roman', serif;
+  margin-right: 0.6vw;
+}
+
+.backstudio {
+  transition: .2s ease;
+  position: relative;
+}
+
+.backstudio:hover {
+  transform: translateY(4vh);
+}
+
+.backtohome {
+  position: absolute;
+  transform: translateY(-4vh);
+  transition: .2s ease;
+  display: inline;
+  right: 0;
+  width: 20vw;
+  margin-right: 0!important;
+  text-align: right;
+}
+
+#works {
+  position: fixed;
+  text-transform: uppercase;
+  right: 3vw;
+  top: 3vh;
+}
+
+#mail {
+  position: fixed;
+  bottom: 3vh;
+  left: 3vw;
+  font-size: 60%;
+}
+
+#redes {
+  position: fixed;
+  bottom: 3vh;
+  right: 3vw;
+  font-size: 60%;
+}
+
+.scroller {
+  height: 100vh;
+  perspective: 1px;
+  transform-style: preserve-3d; 
+}
+
+section {
+  background: #fff;
+  top: 0;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+#logo {
+  position: absolute;
+  width: 50vw;
+  left: 25vw;
+  height: 50vh;
+  top: 22vh;
+  pointer-events: none;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  mix-blend-mode: difference;
+}
+
+#home_img {
+  position: absolute;
+  right: 10vw;
+  bottom: 12vh;
+  transform: translateZ(-1px);
+}
+
+#home_img img {
+  width: 25vw;
+}
+
+#baseline {
+  mix-blend-mode: difference;
+  z-index: 99;
+}
+
+#specialized {
+  position: absolute;
+  width: 30vw;
+  display: flex;
+  justify-content: center;
+  left: 35vw;
+  bottom: 8vh;
+  text-transform: uppercase;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.6vh;
+  color: #fff;
+}
+
+.bg_home {
+    width: 100%;
+    height: 875vh;
+    z-index: -1;
+    position: absolute;
+    background: #fff;
+}
