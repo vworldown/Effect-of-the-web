@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <div class="title">
+      <p>Was this page helpful?💕</p>
+    </div>
+    <div class="operation">
+      <div class="good">
+        <input type="radio" name="comment" id="good">
+        <label for="good">
+          <span>Yes</span>
+        </label>
+        <div class="icon" style="display: none; --top: 0; --left: 0;">
+          <div class="a"></div>
+          <div class="b"></div>
+          <div class="c"></div>
+        </div>
+      </div>
+      <div class="bad">
+        <input type="radio" name="comment" id="bad">
+        <label for="bad">
+          <span>No</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <script>
+  const label = document.querySelector(".good label");
+  const icon = document.querySelector(".icon");
+  label.addEventListener("click", () => {
+    if(icon.style.display === "none") {
+      console.log(event.offsetY, event.offsetX);
+      icon.style.setProperty("--top", event.offsetY + "px");
+      icon.style.setProperty("--left", event.offsetX + "px");
+      icon.style.display = "block";
+    }
+  });
+  document.querySelector(".bad label").addEventListener("click", () => {
+    icon.style.display = "none";
+  })
+  </script>
+</body>
+</html>
