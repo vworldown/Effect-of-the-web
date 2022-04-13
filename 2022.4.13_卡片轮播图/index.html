@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card active"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+  </div>
+  <script>
+    let cards = document.querySelectorAll(".card");
+    let index = 0;
+    const clearActive = () => {
+      for(let card of cards) {
+        if(Object.values(card.classList).includes("active")) {
+          card.classList.remove("active");
+          return;
+        }
+      }
+    }
+
+    setInterval(() => {
+      clearActive();
+      if(index >= 0 && index <= cards.length -1) {
+        index ++;
+      }
+      if(index > cards.length - 1) {
+        index = 0;
+      }
+      cards[index].classList.add("active");
+    }, 2000);
+  </script>
+</body>
+</html>
