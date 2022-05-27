@@ -1,0 +1,29 @@
+:root {
+  --color-primary: #4cc073;
+  --color-primary-light: #8ef27d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(
+    to right bottom,
+    var(--color-primary-light),
+    var(--color-primary)
+  );
+  border-radius: 20px;
+  box-shadow: 0 10px 30px var(--color-primary);
+}
