@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Tiro Bangla", serif;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: [side-start] minmax(min-content, 8rem) [side-end ] minmax(
+      min-content,
+      30rem
+    ) [nav-start] minmax(min-content, 50rem) 1fr [nav-end];
+  grid-template-rows: min-content 5rem minmax(min-content, 30vh) 1fr 20vh;
+}
+
+.side {
+  grid-row: 1 / -1;
+  grid-column: side-start / side-end;
+
+  background-color: rebeccapurple;
+}
+
+.introduction {
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+
+  background-color: royalblue;
+}
+
+.nav {
+  grid-column: 3 / 5;
+  grid-row: 1 / 2;
+
+  display: flex;
+  align-items: center;
+
+  .logo {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: orangered;
+    margin-right: auto;
+  }
+
+  &__lists {
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+  }
+}
+
+.screen {
+  grid-column: 3 / 4;
+  grid-row: 3 / 5;
+
+  background-color: yellowgreen;
+}
+
+.explore {
+  grid-column: 2 / 3;
+  grid-row: 4 / 6;
+}
+
+.sign {
+  grid-column: 3 / 4;
+  grid-row: 5 / 6;
+
+  background-color: orangered;
+}
+
+.bg {
+  grid-column: 4 / 5;
+  grid-row: 3 / 6;
+
+  background: url("./img/girl2.jpg") no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
