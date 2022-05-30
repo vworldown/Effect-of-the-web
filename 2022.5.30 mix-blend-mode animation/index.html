@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <span class="span--1">The Bear Alley</span>
+      <span class="span--2">About The Bear</span>
+      <p class="span--3">
+        <span>Collectibles</span>
+        <span class="destination">Projects</span>
+      </p>
+      <div class="block"></div>
+    </div>
+
+    <script>
+      const block = document.querySelector(".block");
+      const destination = document.querySelector(".destination");
+      const args = destination.getClientRects();
+      console.log(args[0].height, args[0].width);
+      block.style.height = args[0].height + 'px';
+      block.style.width = args[0].width + 'px';
+    </script>
+  </body>
+</html>

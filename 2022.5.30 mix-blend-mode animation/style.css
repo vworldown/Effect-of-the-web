@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  color: rgb(0, 0, 0);
+  position: relative;
+}
+
+.span--1 {
+  font-size: 2.5rem;
+  font-weight: 100;
+  color: rgb(66, 66, 66);
+}
+.span--2 {
+  font-size: 5rem;
+  font-weight: 700;
+  animation: span2 1.2s ease-in-out;
+}
+.span--3 {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.destination {
+  color: #fff;
+  padding: 0 2rem;
+}
+
+.block {
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  mix-blend-mode: difference;
+  animation: blockAnimation 1.5s ease-in-out forwards;
+}
+
+@keyframes blockAnimation {
+  0% {
+    transform: translate(100%, 50%) scaleX(0.5);
+    bottom: 0;
+    right: 100%;
+  }
+  60% {
+    transform: translateY(50%) scaleX(0.8);
+    bottom: 0;
+    right: 2rem;
+  }
+  to {
+    transform: translateY(-50%) scaleX(1);
+    bottom: 0;
+    right: 2rem;
+  }
+}
+@keyframes span2 {
+  0%, to {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5rem);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
