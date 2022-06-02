@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <ul>
+        <li class="list active">
+          <a href="#">
+            <svg class="icon">
+              <use xlink:href="./sprite.svg#icon-user"></use>
+            </svg>
+            <span class="text">Profile</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="#">
+            <svg class="icon">
+              <use xlink:href="./sprite.svg#icon-bubble"></use>
+            </svg>
+            <span class="text">Messages</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="#">
+            <svg class="icon">
+              <use xlink:href="./sprite.svg#icon-camera"></use>
+            </svg>
+            <span class="text">Photos</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="#">
+            <svg class="icon">
+              <use xlink:href="./sprite.svg#icon-settings"></use>
+            </svg>
+            <span class="text">Settings</span>
+          </a>
+        </li>
+        <div class="indicator"></div>
+      </ul>
+    </nav>
+
+    <script>
+      const lists = document.querySelectorAll(".list");
+      function activeLink() {
+        lists.forEach((item) => {
+          item.classList.remove("active");
+        });
+        this.classList.add("active");
+      }
+      lists.forEach((item) => {
+        item.addEventListener("click", activeLink);
+      });
+    </script>
+  </body>
+</html>

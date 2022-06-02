@@ -1,0 +1,148 @@
+$clr: #222327;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Helvetica;
+  line-height: 1.6;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $clr;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.navigation {
+  width: 40rem;
+  height: 7rem;
+  background-color: #fff;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 1rem;
+}
+
+.navigation ul {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: auto;
+  list-style: none;
+
+  li {
+    position: relative;
+    width: 7rem;
+    height: 7rem;
+    z-index: 1;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+
+      .icon {
+        width: 2.4rem;
+        height: 2.4rem;
+        fill: $clr;
+        transition: all 0.5s;
+      }
+
+      .text {
+        position: absolute;
+
+        color: $clr;
+        font-size: 1.4rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+
+        opacity: 0;
+        transform: translateY(2rem);
+
+        transition: all 0.5s;
+      }
+    }
+  }
+}
+
+li.active a .icon {
+  transform: translateY(-3.5rem);
+}
+
+li.active a .text {
+  transform: translateY(1rem);
+  opacity: 1 !important;
+}
+
+.indicator {
+  position: absolute;
+  top: -50%;
+
+  width: 7rem;
+  height: 7rem;
+  background-color: #29fd53;
+  border-radius: 50%;
+  border: 6px solid $clr;
+
+  transition: all 0.5s;
+}
+
+.indicator::before,
+.indicator::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  backface-visibility: hidden;
+  background-color: transparent;
+}
+
+.indicator::before {
+  top: 50%;
+  left: -25px;
+  border-top-right-radius: 50%;
+  box-shadow: 0 -10px 0 0 $clr;
+}
+
+.indicator::after {
+  top: 50%;
+  right: -25px;
+  border-top-left-radius: 50%;
+  box-shadow: 0 -10px 0 0 $clr;
+}
+
+li:nth-child(1).active ~ .indicator {
+  transform: translateX(7rem * 0);
+}
+
+li:nth-child(2).active ~ .indicator {
+  transform: translateX(7rem * 1);
+}
+
+li:nth-child(3).active ~ .indicator {
+  transform: translateX(7rem * 2);
+}
+
+li:nth-child(4).active ~ .indicator {
+  transform: translateX(7rem * 3);
+}
