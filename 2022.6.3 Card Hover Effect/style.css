@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(22, 54, 76);
+}
+
+.container {
+  width: 110rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 3rem;
+}
+
+.card {
+  max-width: 30rem;
+  height: 21.5rem;
+  background: #fff;
+  transition: all 0.5s ease-in-out;
+  margin: 3rem 1rem;
+  padding: 2rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card:hover {
+  height: 42rem;
+}
+
+figure {
+  width: 26rem;
+  height: 26rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  position: relative;
+  top: -6rem;
+}
+
+figcaption {
+  position: relative;
+  margin-top: -14rem;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in;
+}
+
+.card:hover figure figcaption {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -40px;
+}
+
+/*# sourceMappingURL=style.css.map */
