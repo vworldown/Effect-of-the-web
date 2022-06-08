@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h2>Heading</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+          est qui porro nam corrupti! Neque a est blanditiis possimus tempore.
+          Consectetur vero placeat atque nam error, ab officia aliquam
+          assumenda.
+        </p>
+      </div>
+      <div class="toggleBtn"></div>
+    </div>
+
+    <script>
+      const container = document.querySelector(".container");
+      const toggleBtn = document.querySelector(".toggleBtn");
+
+      toggleBtn.addEventListener("click", () => {
+        container.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
