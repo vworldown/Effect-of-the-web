@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #222;
+}
+
+a {
+  position: relative;
+  width: 24rem;
+  height: 8rem;
+  background: #333;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+a span {
+  position: absolute;
+  left: 6rem;
+  width: 3rem;
+  height: 3.2rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  background-color: #fff;
+  transition: all 0.5s;
+}
+a span::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.4rem;
+  background-color: #fff;
+  top: -0.6rem;
+  box-shadow: 18px -2px 0 #333, 18px -3px 0 #333, 18px -4px 0 #333, 10px -3px 0 #fff;
+  transition: all 0.5s;
+}
+
+a.active {
+  background-color: #2196f3;
+}
+
+a.active span {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%) rotateZ(-45deg);
+  border-radius: 0;
+  width: 4rem;
+  height: 2rem;
+  background: transparent;
+  border-left: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+}
+
+a.active:hover span {
+  transform: translate(-50%, -100%) rotateZ(-45deg);
+}
+
+a:hover span {
+  transform: scale(1.5) rotateZ(60deg) translateY(1.5rem);
+}
+
+a.active:hover span::before,
+a.active span::before {
+  transform: scale(0);
+}
+
+a:hover span::before {
+  transform: rotateZ(-90deg) translate(50%, -1.5rem);
+}
+
+p {
+  position: absolute;
+  right: 6rem;
+  text-decoration: none;
+  color: #fff;
+  font-size: 2.6rem;
+  transition: all 0.5s;
+}
+
+a.active p,
+a:hover p {
+  transform: translate(-6rem, -0.5rem) scale(0);
+}
+
+/*# sourceMappingURL=style.css.map */
