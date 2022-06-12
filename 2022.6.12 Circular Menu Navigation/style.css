@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #222;
+}
+
+.menu {
+  position: relative;
+  width: 30rem;
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+.menu .toggle {
+  position: absolute;
+  width: 7.5rem;
+  height: 7.5rem;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.icon-plus {
+  width: 3.5rem;
+  height: 3.5rem;
+  fill: #222327;
+}
+
+.menu .toggle.active {
+  transform: rotateZ(315deg);
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0 8.6rem #fff;
+  box-shadow: 0 0 0 8.6rem #fff;
+  background: #222327;
+}
+.menu .toggle.active .icon-plus {
+  fill: #fff;
+}
+
+.menu li {
+  position: absolute;
+  left: 1rem;
+  transform: rotateZ(calc(45deg * var(--i))) translateX(2rem);
+  transform-origin: 14rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  z-index: 10;
+  transition: all 0.5s;
+}
+.menu li a {
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  transform: rotateZ(calc(-45deg * var(--i)));
+}
+.menu li .icon {
+  width: 3.4rem;
+  height: 3.4rem;
+  fill: #222327;
+}
+
+.menu.active li {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu.active li.active a {
+  transform: translateX(-3rem) rotateZ(calc(-45deg * var(--i)));
+}
+
+.indicator {
+  position: absolute;
+  left: 50%;
+  width: 8rem;
+  height: 1px;
+  transform-origin: 0 50%;
+  transition: all 0.5s;
+}
+.indicator::after {
+  content: "";
+  width: 6.4rem;
+  height: 6.4rem;
+  position: absolute;
+  transform: translate(calc(100% + 3rem), -50%);
+  border-radius: 50%;
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.menu.active .indicator::after {
+  top: -50%;
+  background-color: #29fd53;
+  box-shadow: 0 0 0 6px #222327;
+  opacity: 1;
+}
+
+.l1.active ~ .indicator {
+  transform: rotateZ(180deg);
+}
+
+.l2.active ~ .indicator {
+  transform: rotateZ(225deg);
+}
+
+.l3.active ~ .indicator {
+  transform: rotateZ(270deg);
+}
+
+.l4.active ~ .indicator {
+  transform: rotateZ(315deg);
+}
+
+.l5.active ~ .indicator {
+  transform: rotateZ(0deg);
+}
+
+.l6.active ~ .indicator {
+  transform: rotateZ(45deg);
+}
+
+.l7.active ~ .indicator {
+  transform: rotateZ(90deg);
+}
+
+.l8.active ~ .indicator {
+  transform: rotateZ(135deg);
+}
+
+/*# sourceMappingURL=style.css.map */

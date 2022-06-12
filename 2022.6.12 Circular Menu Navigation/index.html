@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <ul class="menu">
+      <div class="toggle">
+        <svg class="icon icon-plus">
+          <use xlink:href="sprits.svg#icon-plus"></use>
+        </svg>
+      </div>
+      <li style="--i: 0" class="l1">
+        <a href="#">
+          <svg class="icon">
+            <use xlink:href="sprits.svg#icon-user"></use>
+          </svg>
+        </a>
+      </li>
+      <li style="--i: 1" class="l2">
+        <a href="#">
+          <svg class="icon">
+            <use xlink:href="sprits.svg#icon-key"></use>
+          </svg>
+        </a>
+      </li>
+      <li style="--i: 2" class="l3">
+        <a href="#">
+          <svg class="icon">
+            <use xlink:href="sprits.svg#icon-settings"></use>
+          </svg>
+        </a>
+      </li>
+      <li style="--i: 3" class="l4">
+        <a href="#">
+          <svg class="icon">
+            <use xlink:href="sprits.svg#icon-camera"></use>
+          </svg>
+        </a>
+      </li>
+      <li style="--i: 4" class="l5 active">
+        <a href="#">
+          <svg class="icon">
+            <use xlink:href="sprits.svg#icon-cup"></use>
+          </svg>
+        </a>
+      </li>
+      <li style="--i: 5" class="l6">
+        <a href="#">
+          <svg class="icon">
+            <use xlink:href="sprits.svg#icon-mail"></use>
+          </svg>
+        </a>
+      </li>
+      <li style="--i: 6" class="l7">
+        <a href="#">
+          <svg class="icon">
+            <use xlink:href="sprits.svg#icon-shop"></use>
+          </svg>
+        </a>
+      </li>
+      <li style="--i: 7" class="l8">
+        <a href="#">
+          <svg class="icon">
+            <use xlink:href="sprits.svg#icon-video"></use>
+          </svg>
+        </a>
+      </li>
+      <div class="indicator"></div>
+    </ul>
+
+    <script>
+      const menu = document.querySelector(".menu");
+      const menuBtn = document.querySelector(".toggle");
+
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("active");
+        menuBtn.classList.toggle("active");
+      });
+
+      const list = document.querySelectorAll("li");
+      function activeLink() {
+        list.forEach((item) => {
+          item.classList.remove("active");
+        });
+        this.classList.add("active");
+      }
+      list.forEach((item) => {
+        item.addEventListener("click", activeLink);
+      });
+    </script>
+  </body>
+</html>
