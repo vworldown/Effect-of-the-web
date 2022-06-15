@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.block {
+  width: 5vw;
+  height: 5vh;
+  background: url("./bg.jpg");
+  background-size: cover;
+  background-position: center;
+  -webkit-background-attachment: fixed;
+  background-attachment: fixed;
+  transform-style: preserve-3d;
+}
+
+/*# sourceMappingURL=style.css.map */
