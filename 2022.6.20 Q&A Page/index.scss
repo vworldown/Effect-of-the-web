@@ -1,0 +1,169 @@
+$bg-clr-1: #70f570;
+$bg-clr-2: #49c628;
+
+$bg-clr-3: #3c8ce7;
+$bg-clr-4: #00eaff;
+
+$bg-clr-5: #ff96f9;
+$bg-clr-6: #c32bac;
+
+$bg-clr-7: #fd6e6a;
+$bg-clr-8: #ffc600;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  font-weight: 300;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f8ff;
+}
+
+.container {
+  max-width: 60rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.container > h1 {
+  color: #333;
+  font-size: 2.8rem;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tab li {
+  background-color: #fff;
+  list-style: none;
+  padding: 0 2rem 2rem;
+  box-shadow: 0 1.5rem 2.5rem rgba($color: #000000, $alpha: 0.05);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.tab li input {
+  appearance: none;
+}
+
+.tab li {
+  position: relative;
+}
+
+.tab li label {
+  display: flex;
+  align-items: center;
+
+  h2 {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #000;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-right: 1rem;
+  }
+
+  h3 {
+    position: relative;
+    z-index: 10;
+    margin-right: auto;
+    font-weight: 700;
+    color: #333;
+    font-size: 2rem;
+  }
+
+  &::after {
+    content: "+";
+    font-size: 3rem;
+    font-weight: 500;
+    color: rgba($color: #000000, $alpha: 0.1);
+    transition: all 0.5s;
+  }
+
+  &:hover::after {
+    color: #000;
+  }
+}
+
+.tab li input:checked ~ label {
+  &::after {
+    color: #fff;
+    transform: rotate(135deg);
+  }
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+}
+
+.tab li input:checked ~ .content {
+  max-height: 100vh;
+}
+
+.content p {
+  position: relative;
+  z-index: 10;
+  padding: 2rem 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.tab li:nth-child(1) label h2 {
+  background: linear-gradient(135deg, $bg-clr-1, $bg-clr-2);
+}
+
+.tab li:nth-child(2) label h2 {
+  background: linear-gradient(135deg, $bg-clr-3, $bg-clr-4);
+}
+
+.tab li:nth-child(3) label h2 {
+  background: linear-gradient(135deg, $bg-clr-5, $bg-clr-6);
+}
+
+.tab li:nth-child(4) label h2 {
+  background: linear-gradient(135deg, $bg-clr-7, $bg-clr-8);
+}
+
+.tab li input:checked ~ label > h2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  font-size: 10rem;
+  justify-content: flex-end;
+  padding: 2rem;
+  color: rgba($color: #fff, $alpha: 0.2);
+}
+
+
+.tab li input:checked ~ label h3 {
+  color: #fff;
+}
+
+.tab li input:checked ~ .content p {
+  color: #fff;
+}
