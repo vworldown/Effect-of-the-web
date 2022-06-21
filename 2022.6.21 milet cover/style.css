@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.wrap {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: black;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 55%;
+  margin: auto;
+  -webkit-transform: translate3d(0, 0, 10px);
+  transform: translate3d(0, 0, 10px);
+  -webkit-filter: blur(30px);
+  filter: blur(30px);
+  opacity: 0.7;
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.content {
+  width: 32rem;
+  height: 32rem;
+}
+.content img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.introduce {
+  position: relative;
+  z-index: 2;
+  padding: 1.6rem 2rem 2rem;
+  background-color: #181818;
+  text-align: center;
+  color: #fff;
+}
+.introduce h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.introduce p {
+  margin: 5px 0 0;
+  font-size: 1.4rem;
+}
+.introduce::after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  width: 0;
+  height: 0;
+  border: 2rem solid;
+  border-color: #181818 transparent transparent transparent;
+}
+
+.players {
+  position: relative;
+  height: 50rem;
+  background-color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */

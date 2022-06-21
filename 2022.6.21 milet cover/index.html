@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <img src="./1.jpg" alt="" class="bg" />
+    </div>
+    <div class="card">
+      <div class="content">
+        <img src="./1.jpg" alt="" />
+      </div>
+      <div class="introduce">
+        <h3>milet</h3>
+        <p>Walkin' In My Lane</p>
+      </div>
+      <div class="players"></div>
+    </div>
+
+    <script>
+      const content = document.querySelector(".content");
+      window.addEventListener("scroll", () => {
+        let scrollTop = document.documentElement.scrollTop;
+        console.log(scrollTop)
+        content.style.transform = `translate3d(0, ${scrollTop * 0.65}px,0)`;
+      });
+    </script>
+  </body>
+</html>
