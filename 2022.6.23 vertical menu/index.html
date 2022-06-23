@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <ul>
+        <li class="active">
+          <a href="#">
+            <svg class="icon">
+              <use xlink:href="sprite.svg#icon-home"></use>
+            </svg>
+            <p>Home</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg class="icon">
+              <use xlink:href="sprite.svg#icon-user"></use>
+            </svg>
+            <p>Profile</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg class="icon">
+              <use xlink:href="sprite.svg#icon-message"></use>
+            </svg>
+            <p>Message</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg class="icon">
+              <use xlink:href="sprite.svg#icon-question"></use>
+            </svg>
+            <p>Help</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg class="icon">
+              <use xlink:href="sprite.svg#icon-cog"></use>
+            </svg>
+            <p>Settings</p>
+          </a>
+        </li>
+        <div class="indicator"></div>
+      </ul>
+    </nav>
+
+    <script>
+      const colors = ["#f53b57", "#3c40c6", "#05c46b", "#0fbcf9", "#ffa801"];
+      const body = document.querySelector("body");
+      const lists = document.querySelectorAll("li");
+      lists.forEach((list, index) => {
+        list.addEventListener("click", () => {
+          clear();
+          list.classList.toggle("active");
+          body.style.backgroundColor = colors[index];
+        });
+      });
+
+      function clear() {
+        lists.forEach((list) => {
+          list.classList.remove("active");
+        });
+      }
+    </script>
+  </body>
+</html>
