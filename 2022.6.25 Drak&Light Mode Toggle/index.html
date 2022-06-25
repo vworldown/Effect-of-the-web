@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="toggle">
+      <input type="checkbox" id="toggle__btn" />
+      <label for="toggle__btn" class="indicator"> </label>
+    </div>
+
+    <script>
+      const body = document.querySelector("body");
+      const toggle = document.querySelector(".toggle");
+      const label = document.querySelector("label")
+      label.addEventListener("click", () => {
+        toggle.classList.toggle("active");
+        body.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
