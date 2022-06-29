@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #cbe058;
+}
+
+a {
+  padding: 2rem 6rem;
+  background-color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  color: #555;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  -webkit-clip-path: polygon(80% 0%, 100% 50%, 80% 100%, 0% 100%, 20% 50%, 0% 0%);
+  clip-path: polygon(80% 0%, 100% 50%, 80% 100%, 0% 100%, 20% 50%, 0% 0%);
+  transition: 0.5s;
+}
+a:hover {
+  background-color: #a7b612;
+  -webkit-clip-path: polygon(100% 0%, 80% 50%, 100% 100%, 20% 100%, 0% 50%, 25% 0%);
+  clip-path: polygon(100% 0%, 80% 50%, 100% 100%, 20% 100%, 0% 50%, 20% 0%);
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */
