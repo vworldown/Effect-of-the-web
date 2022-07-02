@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="epic__container">
+      <div class="epic__a">
+        <div class="epic__item">
+          <div class="epic__picture">
+            <img src="./img/battle breakers.jpg" alt="" />
+          </div>
+          <div class="epic__title">
+            <span>battle breakers</span>
+          </div>
+        </div>
+        <div class="epic__item">
+          <div class="epic__picture">
+            <img src="./img/fortnite.jpg" alt="" />
+          </div>
+          <div class="epic__title">
+            <span>fornite</span>
+          </div>
+        </div>
+        <div class="epic__item">
+          <div class="epic__picture">
+            <img src="./img/robo recall.jpg" alt="" />
+          </div>
+          <div class="epic__title">
+            <span>robo recall</span>
+          </div>
+        </div>
+        <div class="epic__item">
+          <div class="epic__picture">
+            <img src="./img/rocket league.jpg" alt="" />
+          </div>
+          <div class="epic__title">
+            <span>rocket league</span>
+          </div>
+        </div>
+        <div class="epic__item">
+          <div class="epic__picture">
+            <img src="./img/store.jpg" alt="" />
+          </div>
+          <div class="epic__title">
+            <span>store</span>
+          </div>
+        </div>
+        <div class="epic__item">
+          <div class="epic__picture">
+            <img src="./img/unreal tournament.jpg" alt="" />
+          </div>
+          <div class="epic__title">
+            <span>unreal tournament</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const container = document.querySelector(".epic__a");
+      const width = container.getClientRects()[0].width;
+      console.log(width);
+      let count = 0;
+
+      setInterval(() => {
+        if (count <= width / 2) {
+          count += 0.1;
+        } else {
+          count = 0;
+        }
+        container.style.transform = `translateX(-${count}px)`;
+      });
+    </script>
+  </body>
+</html>

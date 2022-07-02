@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.epic__container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.epic__a {
+  width: 200vw;
+  position: relative;
+}
+.epic__item {
+  flex-shrink: 0;
+  position: absolute;
+  width: 33.3333333333vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.epic__item:nth-child(2) {
+  left: 33.3333333333vw;
+}
+.epic__item:nth-child(3) {
+  left: 66.6666666667vw;
+}
+.epic__item:nth-child(4) {
+  left: 100vw;
+}
+.epic__item:nth-child(5) {
+  left: 133.3333333333vw;
+}
+.epic__item:nth-child(6) {
+  left: 166.6666666667vw;
+}
+.epic__picture {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+.epic__picture img {
+  height: 100%;
+  filter: brightness(50%);
+  transition: all 0.5s;
+}
+.epic__picture img:hover {
+  filter: none;
+  transform: scale(1.1);
+}
+.epic__title {
+  position: absolute;
+  bottom: 10rem;
+  left: 0rem;
+  width: 40rem;
+  height: 10rem;
+  line-height: 1.2;
+  white-space: wrap;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.btn__pre {
+  position: absolute;
+}
+.btn__suf {
+  position: absolute;
+}
+
+/*# sourceMappingURL=style.css.map */
