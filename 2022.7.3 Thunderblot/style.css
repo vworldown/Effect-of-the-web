@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  min-height: 100vh;
+  background-color: #222;
+}
+
+.shape1 {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 3rem solid transparent;
+  border-bottom: 6rem solid #5ff436;
+  transform: skewX(-15deg);
+}
+.shape1::after {
+  content: "";
+  position: absolute;
+  top: 5rem;
+  left: -1rem;
+  border-right: 3rem solid transparent;
+  border-top: 6rem solid #5ff436;
+}
+
+.shape2 {
+  position: relative;
+  width: 3rem;
+  height: 6rem;
+  background-color: #5ff436;
+  transform: skewX(-25deg);
+}
+.shape2::before, .shape2::after {
+  content: "";
+  position: absolute;
+}
+.shape2::before {
+  border-left: 3rem solid transparent;
+  border-bottom: 6rem solid #5ff436;
+  top: -80%;
+  left: -2rem;
+}
+.shape2::after {
+  border-right: 3rem solid transparent;
+  border-top: 6rem solid #5ff436;
+  top: 80%;
+  left: 2rem;
+}
+
+/*# sourceMappingURL=style.css.map */
