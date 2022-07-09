@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 60rem;
+  height: 60rem;
+}
+
+.line {
+  &__top,
+  &__bottom {
+    position: absolute;
+    width: 65rem;
+    height: 1rem;
+    background-color: #000;
+    border-radius: 5px;
+  }
+
+  &__left,
+  &__right {
+    position: absolute;
+    width: 1rem;
+    height: 65rem;
+    background-color: #000;
+    border-radius: 5px;
+  }
+
+  &__left {
+    left: -1rem;
+    top: -2.5rem;
+  }
+
+  &__right {
+    right: -1rem;
+    top: -2.5rem;
+  }
+
+  &__top {
+    left: -2.5rem;
+    top: -1rem;
+  }
+
+  &__bottom {
+    left: -2.5rem;
+    bottom: -1rem;
+  }
+}
+
+.blue {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30rem;
+  height: 30rem;
+  background-color: rgb(56, 56, 235);
+  animation: bluemove ease-in-out 5s;
+}
+
+.red {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30rem;
+  height: 30rem;
+  background-color: #f11;
+  animation: redmove ease-in-out 5s;
+}
+
+.move__line {
+  &-1,
+  &-2 {
+    position: absolute;
+    background-color: #000;
+    border-radius: 5px;
+  }
+
+  &-1 {
+    width: 65rem;
+    height: 1rem;
+    left: -2.5rem;
+    top: 30rem;
+    animation: move1 ease-in-out 5s;
+  }
+
+  &-2 {
+    width: 1rem;
+    height: 65rem;
+    top: -2.5rem;
+    left: 30rem;
+    animation: move2 ease-in-out 5s;
+  }
+}
+
+@keyframes redmove {
+  from,
+  to {
+    width: 30rem;
+    height: 30rem;
+  }
+  25% {
+    width: 10rem;
+    height: 30rem;
+  }
+
+  50% {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  75% {
+    width: 30rem;
+    height: 10rem;
+  }
+}
+
+@keyframes bluemove {
+  from,
+  to {
+    width: 30rem;
+    height: 30rem;
+  }
+  25% {
+    width: 50rem;
+    height: 30rem;
+  }
+
+  50% {
+    width: 50rem;
+    height: 50rem;
+  }
+
+  75% {
+    width: 30rem;
+    height: 50rem;
+  }
+}
+
+@keyframes move1 {
+  from,
+  to {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20rem);
+  }
+
+  75% {
+    transform: translateY(20rem);
+  }
+}
+
+@keyframes move2 {
+  from,
+  to {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(20rem);
+  }
+
+  50% {
+    transform: translateX(20rem);
+  }
+
+  75% {
+    transform: translateX(0);
+  }
+}
